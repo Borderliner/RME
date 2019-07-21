@@ -3,6 +3,13 @@
 ;;; https://sanemacs.com   ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(require 'init-elpa)
+;; Enable undo-tree, sane undo/redo behavior
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode))
+
 ;;; Disable menu-bar, tool-bar, and scroll-bar.
 (if (fboundp 'menu-bar-mode)
     (menu-bar-mode -1))
@@ -10,7 +17,6 @@
     (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode)
     (scroll-bar-mode -1))
-
 
 ;;; Useful Defaults
 (setq-default cursor-type 'bar)           ; Line-style cursor similar to other text editors
@@ -25,8 +31,6 @@
           (if (fboundp 'display-line-numbers-mode)
               #'display-line-numbers-mode
             #'linum-mode))
-(use-package undo-tree                    ; Enable undo-tree, sane undo/redo behavior
-  :init (global-undo-tree-mode))
 
 ;;; Keybindings
 (global-set-key (kbd "C->") 'indent-rigidly-right-to-tab-stop) ; Indent selection by one tab length
@@ -43,8 +47,7 @@
 ;;; Avoid littering the user's filesystem with backups
 (setq
    backup-by-copying t      ; don't clobber symlinks
-   backup-directory-alist
-    '((".*" . (concat (getenv "HOME") "/.emacs.d/saves/")))    ; don't litter my fs tree
+   backup-directory-alist '(("." . "saves/"))    ; don't litter my fs tree
    delete-old-versions t
    kept-new-versions 6
    kept-old-versions 2
@@ -53,7 +56,4 @@
 ;;; Lockfiles unfortunately cause more pain than benefit
 (setq create-lockfiles nil)
 
-;;; Load wheatgrass as the default theme if one is not loaded already
-
-(if (not custom-enabled-themes)
-    (load-theme 'wheatgrass t))
+(provide 'init-core)
