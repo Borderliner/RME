@@ -5,12 +5,19 @@
 ;;; Code:
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 
+;;; Core modules
 (require 'init-elpa)
 (require 'init-core)
 (require 'init-ui)
 (require 'init-editting)
+
+;;; Helper modules
 (require 'init-company)
 (require 'init-flycheck)
+(require 'init-lsp)
+
+;;; Programming languages
+(require 'init-rust)
 
 ;;; Your configuration goes below this line.
 ;;; use-package is already loaded and ready to go!

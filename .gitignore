@@ -1,4 +1,6 @@
 elpa
 custom.el
 saves
+auto-save-list
+.lsp*
 *~
