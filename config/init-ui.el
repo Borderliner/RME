@@ -5,10 +5,10 @@
   :config
   (load-theme 'gruvbox t))
 
-(use-package golden-ratio
+(use-package zoom
   :ensure t
   :config
-  (golden-ratio-mode 1))
+  (setq zoom-mode t))
 
 ;;; Load wheatgrass as the default theme if one is not loaded already
 
