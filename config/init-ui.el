@@ -33,6 +33,9 @@
 (set-cursor-color "#cccccc")
 (setq ring-bell-function 'ignore)
 
+;;; Start maximized
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 ;;; Do not show Emacs welcome screen
 (defun on-after-init ()
   (unless (display-graphic-p (selected-frame))
@@ -47,9 +50,29 @@
 ;; 	   (set-window-margins (car (get-buffer-window-list (current-buffer) nil t)) 5 5)))
 
 (use-package perfect-margin
-  :ensure t
+  :custom
+  (perfect-margin-visible-width 128)
   :config
-  (perfect-margin-mode 1))
+  ;; enable perfect-mode
+  (perfect-margin-mode t)
+  
+  ;; add additinal bding on margin area
+  (dolist (margin '("<left-margin> " "<right-margin> "))
+  (global-set-key (kbd (concat margin "<mouse-1>")) 'ignore)
+  (global-set-key (kbd (concat margin "<mouse-3>")) 'ignore)
+  (dolist (multiple '("" "double-" "triple-"))
+      (global-set-key (kbd (concat margin "<" multiple "wheel-up>")) 'mwheel-scroll)
+      (global-set-key (kbd (concat margin "<" multiple "wheel-down>")) 'mwheel-scroll))))
+
+;;; doom-modeline for bottom status bar
+(use-package doom-modeline
+      :ensure t
+      :hook (after-init . doom-modeline-mode)
+      :config
+      ;; Don’t compact font caches during GC. Improves performance
+      (setq inhibit-compacting-font-caches t)
+      ;; Fix symlink bug for emacs
+      (setq find-file-visit-truename t))
 
 (provide 'init-ui)
 
