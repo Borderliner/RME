@@ -16,8 +16,9 @@
 	(package-refresh-contents))
       (package-install package))))
 
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.org/packages/"))
+(setq package-archives
+      '(("melpa" . "http://melpa.org/packages/")
+        ("gnu" . "http://elpa.gnu.org/packages/")))
 
 (package-initialize)
 
