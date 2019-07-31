@@ -16,8 +16,8 @@
 (require 'init-flycheck)
 (require 'init-lsp)
 
-;;; Programming languages
-(require 'init-rust)
+;;; Programming languages, disabled by default
+; (require 'init-rust)
 
 ;;; Your configuration goes below this line.
 ;;; use-package is already loaded and ready to go!
