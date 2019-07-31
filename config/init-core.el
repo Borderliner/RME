@@ -53,6 +53,9 @@
    kept-old-versions 2
    version-control t)       ; use versioned backups
 
+;;; Only warn us about errors
+(setq warning-minimum-level :emergency)
+
 ;;; Lockfiles unfortunately cause more pain than benefit
 (setq create-lockfiles nil)
 
