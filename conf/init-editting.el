@@ -7,8 +7,11 @@
 (use-package smartparens
   :ensure t
   :config
-  ;; Enable multiple languages support for smartparens mode
-  (require 'smartparens-config))
+  (require 'smartparens-config)
+  (smartparens-global-mode t)
+  (setq sp-highlight-pair-overlay nil)
+  (setq sp-show-pair-from-inside nil)
+  :diminish smartparens-mode)
 
 (use-package move-text
   :ensure t
