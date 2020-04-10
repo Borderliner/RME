@@ -2,7 +2,7 @@
 # RME: Ryan's Minimal Emacs
 
 ## Overview
-RME is a set of configuration for GNU Emacs, which aims to be minimal, beautiful, and fast. It's also very modular, so you can easily enable/disable the features you want. I try to keep it as much documented as I can.
+RME is a set of configuration files for GNU Emacs, which aims to be minimal, beautiful, and fast. It's also very modular, so you can easily enable/disable the features you want. I try to keep it as much documented as I can.
 
 
 Going through the config files is highly recommended.
