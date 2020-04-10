@@ -1,7 +1,3 @@
-
-;;; Code:
-(require 'init-elpa)
-
 ;; lsp-mode main package
 (use-package lsp-mode
   :ensure t

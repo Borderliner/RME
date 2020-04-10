@@ -1,5 +1,3 @@
-(require 'init-elpa)
-
 (use-package company
   :ensure t
   :config

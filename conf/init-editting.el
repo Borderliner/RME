@@ -1,5 +1,3 @@
-(require 'init-elpa)
-
 (use-package rainbow-delimiters
   :ensure t
   ;; Add hooks for programming mode
@@ -17,9 +15,6 @@
   :bind (("M-<up>" .  move-text-up)
 	 ("M-<down>" .  move-text-down)))
 
-;; Highlights matching parenthesis
-(show-paren-mode 1)
-
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
 ;; Remember line when you revisit a file
@@ -27,6 +22,6 @@
 (setq save-place-file (concat user-emacs-directory "places"))
 
 ;; Disable autosaves
-(setq auto-save-default nil)
+; (setq auto-save-default nil)
 
 (provide 'init-editting)

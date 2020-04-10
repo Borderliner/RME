@@ -1,4 +1,3 @@
-(require 'init-elpa)
 (use-package flycheck
   :ensure t
   :hook
