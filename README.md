@@ -15,7 +15,7 @@ git clone https://github.com/Borderliner/rme ~/.emacs.d
 ```
 
 
-![RME Preview](https://img.techpowerup.org/190731/rme.png)
+![RME Preview](https://img.techpowerup.org/200410/screenshot-from-2020-04-11-02-55-00.png)
 
 ## License
 
