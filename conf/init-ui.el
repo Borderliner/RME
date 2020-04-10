@@ -17,7 +17,7 @@
                     :width 'normal)
 
 ;; Emacs window width and height in pixels
-(setq emacs-width-px 1024)
+(setq emacs-width-px 1400)
 (setq emacs-height-px 768)
 
 ;; Set window size and center it on the screen
@@ -62,6 +62,30 @@
       (setq inhibit-compacting-font-caches t)
       ;; Fix symlink bug for emacs
       (setq find-file-visit-truename t))
+
+(use-package neotree
+  :ensure t
+  :config
+  ;; (global-set-key [f8] 'neotree-toggle)
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+
+(defcustom last-neotree-toggled nil
+  "Checks if neotree was last toggled."
+  :group 'wp
+  :type 'boolean)
+
+(global-set-key [f8] (lambda ()
+		       (interactive)
+		       (if last-neotree-toggled
+			   (progn
+			     (customize-save-variable 'last-neotree-toggled nil)
+			     (neotree-hide))
+			 (progn
+			   (customize-save-variable 'last-neotree-toggled t)
+			   (neotree-show)))))
+
+(if last-neotree-toggled
+    (neotree-show))
 
 (provide 'init-ui)
 
