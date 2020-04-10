@@ -41,7 +41,8 @@
 (setq ring-bell-function 'ignore)
 
 ;; Download icons
-(use-package all-the-icons)
+(use-package all-the-icons
+  :ensure t)
 
 (defcustom is-all-the-icons-installed nil
   "DO NOT EDIT. Checks if all-the-icons fonts are installed yet."
