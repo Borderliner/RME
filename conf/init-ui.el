@@ -1,20 +1,24 @@
+;; See the bottom of this file for all available themes!
+
 (use-package doom-themes
   :ensure t
   :config
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  ;; CHANGE THE THEME HERE!
   (load-theme 'doom-dracula t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config))
 
-;; Set default font
-(set-face-attribute 'default nil
-                    :family "Ubuntu Mono"
-                    :height 130
-                    :weight 'normal
-                    :width 'normal)
+;; Set default font for emacs pre 26.3 here
+(when (version< emacs-version "27.0")
+  (set-face-attribute 'default nil
+		      :family "Ubuntu Mono"
+		      :height 130
+		      :weight 'normal
+		      :width 'normal))
 
 ;; Emacs window width and height in pixels
 (setq emacs-width-px 1400)
@@ -46,7 +50,7 @@
 
 (defcustom is-all-the-icons-installed nil
   "DO NOT EDIT. Checks if all-the-icons fonts are installed yet."
-  :group 'faces
+  :group 'rme
   :type 'boolean)
 
 (unless is-all-the-icons-installed
@@ -71,7 +75,7 @@
 
 (defcustom last-neotree-toggled nil
   "Checks if neotree was last toggled."
-  :group 'wp
+  :group 'rme
   :type 'boolean)
 
 (global-set-key [f8] (lambda ()
@@ -89,3 +93,43 @@
 
 (provide 'init-ui)
 
+;;; Available themes:
+;; doom-one
+;; doom-one-light
+;; doom-vibrant
+;; doom-acario-dark
+;; doom-acario-light
+;; doom-city-lights
+;; doom-challenger-deep
+;; doom-dark+
+;; doom-dracula
+;; doom-ephemeral
+;; doom-fairy-floss
+;; doom-gruvbox
+;; doom-horizon
+;; doom-Iosvkem
+;; doom-laserwave
+;; doom-material
+;; doom-manegarm
+;; doom-molokai
+;; doom-monokai-classic
+;; doom-monokai-pro
+;; doom-moonlight
+;; doom-nord
+;; doom-nord-light
+;; doom-nova
+;; doom-oceanic-next
+;; doom-opera
+;; doom-opera-light
+;; doom-outrun-electric
+;; doom-palenight
+;; doom-peacock
+;; doom-rouge
+;; doom-snazzy
+;; doom-solarized-dark
+;; doom-solarized-light
+;; doom-sourcerer
+;; doom-spacegrey
+;; doom-tomorrow-day
+;; doom-tomorrow-night
+;; doom-wilmersdorf
