@@ -29,7 +29,7 @@ In case you want to use your own font, edit the config files in these places:
 * User-friendly and professional
 * File tree panel
 
-![RME Preview](https://img.techpowerup.org/200410/screenshot-from-2020-04-11-02-55-00.png)
+![RME Preview](https://img.techpowerup.org/200411/screenshot-from-2020-04-11-21-14-28.png)
 
 ## WIP
 
