@@ -30,6 +30,10 @@
   (require 'use-package))
 (setq use-package-always-ensure t)
 
+;;; Benchmarking tool for testing purposes
+(use-package esup
+  :commands esup)
+
 ;;; Useful Defaults
 (setq-default cursor-type 'bar)           ; Line-style cursor similar to other text editors
 (setq inhibit-startup-screen t)           ; Disable startup screen
