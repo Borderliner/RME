@@ -24,10 +24,9 @@
 (setq-default save-place t)
 (setq save-place-file (concat user-emacs-directory "places"))
 
-(normal-erase-is-backspace-mode 0)
 (setq delete-active-region t)
 
 ;; Disable autosaves
 ; (setq auto-save-default nil)
 
-(provide 'init-editting)
+(provide 'init-editing)
