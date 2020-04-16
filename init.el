@@ -35,8 +35,10 @@
 (require 'init-company)
 (require 'init-flycheck)
 (require 'init-lsp)
+(require 'init-projectile)
 
 ;;; Programming languages, disabled by default
+; (require 'init-programming)
 
 (provide 'init)
 ;;; init ends here
