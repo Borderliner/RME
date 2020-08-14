@@ -12,11 +12,23 @@
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config))
 
+(use-package centaur-tabs
+  :demand
+  :config
+  (centaur-tabs-mode t)
+  (setq centaur-tabs-style "bar")
+  (setq centaur-tabs-height 32)
+  (setq centaur-tabs-set-icons t)
+  (setq centaur-tabs-set-bar 'left)
+  :bind
+  ("C-<prior>" . centaur-tabs-backward)
+  ("C-<next>" . centaur-tabs-forward))
+
 ;; Set default font for emacs pre 26.3 here
 (when (version< emacs-version "27.0")
   (set-face-attribute 'default nil
-		      :family "Ubuntu Mono"
-		      :height 130
+		      :family "Iosevka SS12"
+		      :height 120
 		      :weight 'normal
 		      :width 'normal))
 

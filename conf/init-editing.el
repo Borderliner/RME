@@ -18,8 +18,6 @@
   :bind (("M-<up>" .  move-text-up)
 	 ("M-<down>" .  move-text-down)))
 
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
 ;; Remember line when you revisit a file
 (setq-default save-place t)
 (setq save-place-file (concat user-emacs-directory "places"))
@@ -40,6 +38,17 @@ With argument ARG, do this that many times."
 
 (global-set-key (kbd "<M-backspace>") 'backward-delete-word)
 (global-set-key (kbd "<C-backspace>") 'backward-delete-word)
+(global-set-key (kbd "C-?") 'help-command)
+(global-set-key (kbd "M-?") 'mark-paragraph)
+(global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key (kbd "M-h") 'backward-kill-word)
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+;; Save last session
+ (desktop-save-mode 1)
+
+;; No text wrapping
+(set-default 'truncate-lines t)
 
 ;; Disable autosaves
 ; (setq auto-save-default nil)

@@ -4,3 +4,6 @@ saves
 auto-save-list
 .lsp*
 *~
+transient
+.emacs.desktop
+.emacs.desktop.lock

@@ -25,8 +25,10 @@
 
 ;;; Add conf folder to the load path
 (add-to-list 'load-path (expand-file-name "conf" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "conf/programming" user-emacs-directory))
 
 ;;; Core modules
+(require 'cl)
 (require 'init-core)
 (require 'init-ui)
 (require 'init-editing)
@@ -38,7 +40,7 @@
 (require 'init-projectile)
 
 ;;; Programming languages, disabled by default
-; (require 'init-programming)
+(require 'init-programming)
 
 (provide 'init)
 ;;; init ends here

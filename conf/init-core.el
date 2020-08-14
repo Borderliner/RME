@@ -85,5 +85,10 @@
 (if (not custom-enabled-themes)
     (load-theme 'wheatgrass t))
 
+(use-package paradox
+  :ensure t
+  :init
+  (paradox-enable))
+
 (provide 'init-core)
 
